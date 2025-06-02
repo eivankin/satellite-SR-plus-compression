@@ -49,3 +49,4 @@ See the Jupyter notebook for implementation details: [[link]](notebooks/seaming_
 - Added config & code for [EDiffSR](https://github.com/XY-boy/EDiffSR/).
 - Added code for segmentation experiments: model training, visualization, evaluation.
 - Added code for tile seaming experiments: visualization, evaluation.
+- Added code for inference on custom region of interest: downloading Sentinel-2 imagery for the selected region, splitting into tiles.
