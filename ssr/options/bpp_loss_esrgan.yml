@@ -237,8 +237,8 @@ test:
      bpp:
        type: calculate_bpp
        better: lower
-     compressed_size:
-       type: calculate_compressed_size
+     webp_size:
+       type: calculate_webp_size
        better: lower
 
 # Logging Settings

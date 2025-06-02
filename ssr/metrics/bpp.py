@@ -39,3 +39,20 @@ def calculate_compressed_size(img, img2, **kwargs):
         size_after = f.getbuffer().nbytes
 
     return size_after / size_before
+
+
+@METRIC_REGISTRY.register()
+def calculate_webp_size(img, img2, **kwargs):
+    pimage: Image.Image = to_pil_image(img)
+
+    with BytesIO() as f:
+        pimage.save(f, "webp", losless=True, quality=0)
+        f.seek(0)
+        size_before = f.getbuffer().nbytes
+
+    with BytesIO() as f:
+        pimage.save(f, "webp", losless=True, quality=100)
+        f.seek(0)
+        size_after = f.getbuffer().nbytes
+
+    return size_after / size_before

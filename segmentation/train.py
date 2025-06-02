@@ -1,5 +1,4 @@
 import torch
-import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
 import segmentation_models_pytorch as smp
 from segmentation.dataset import OSMMaskSegmentationDataset
@@ -10,11 +9,12 @@ import matplotlib.pyplot as plt
 
 
 # --- Config ---
-EXPERIMENT_NAME = "ediffsr_upp"
+MODEL_TYPE = "DeepLabV3+"
+EXPERIMENT_NAME = "bpp"
 DATA_ROOT = "../custom_dataset/prepared"
 SPLIT = "test"
 VAL_SPLIT = 0.1
-BATCH_SIZE = 4
+BATCH_SIZE = 16
 NUM_WORKERS = 4
 EPOCHS = 50
 EARLY_STOPPING_PATIENCE = 5
@@ -27,7 +27,7 @@ full_dataset = OSMMaskSegmentationDataset(
     split=SPLIT,
     tile_size=128,
     mode="custom",
-    image_root="/home/eugen/coding/thesis/experiments/satlas-super-resolution/results/ediffsr/visualization/test",
+    image_root="/home/eugen/coding/thesis/experiments/satlas-super-resolution/results/bpp-loss-esrgan/visualization/test",
 )
 val_len = int(len(full_dataset) * VAL_SPLIT)
 train_len = len(full_dataset) - val_len
@@ -37,13 +37,23 @@ train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, nu
 val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS)
 
 # --- Model ---
-model = smp.UnetPlusPlus(
-    encoder_name="timm-efficientnet-b8",
-    encoder_weights="imagenet",
-    in_channels=3,
-    classes=1,
-    activation=None
-).to(DEVICE)
+if MODEL_TYPE == "DeepLabV3+":
+    model = smp.DeepLabV3Plus(
+        encoder_name="mit_b5",
+        encoder_weights="imagenet",
+        in_channels=3,
+        classes=1,
+        activation=None
+    ).to(DEVICE)
+else:
+    model = smp.UnetPlusPlus(
+        encoder_name="timm-efficientnet-b8",
+        encoder_weights="imagenet",
+        in_channels=3,
+        classes=1,
+        activation=None
+    ).to(DEVICE)
+
 if CKPT_PATH is not None:
     model.load_state_dict(torch.load(CKPT_PATH, map_location=DEVICE))
 
