@@ -24,10 +24,12 @@ This project uses a subsample of the latest version of [S2-NAIP dataset](https:/
 The prepared subsample is published on Kaggle: [[link]](https://www.kaggle.com/datasets/evgeniyivankin/s2-naip-5k-pairs-rgb-nir).
 
 ## Model checkpoints
+<!-- TODO: tables with metrics -->
 To be published
 <!-- TODO: upload to HF/etc -->
 
 ## Experiments with segmentation
+<!-- TODO: tables -->
 |                              ![Segmentation examples](segmentation/plots/upp_masks.png)                              |
 |:--------------------------------------------------------------------------------------------------------------------:| 
 | *Fig.4: Unet++ buildings mask predictions on different inputs including NAIP, Sentinel-2 and super-resolved images.* |
@@ -36,5 +38,14 @@ See [`./segmentation`](segmentation) folder for implementation details.
 
 ## Experiments with tile seams
 <!-- TODO: figures -->
+<!-- TODO: tables -->
 
 See the Jupyter notebook for implementation details: [[link]](notebooks/seaming_artifacts.ipynb).
+
+## Key changes compared to Satlas-SR
+- Added support for the new version of S2-NAIP: multichannel images, tile filtering by WorldCover, masks & boxes extraction from OSM. 
+- Changed the inference pipeline: support overlap, different tile & grid sizes, tile blending.
+- Implemented a new architecture with location embeddings proposed by [Panangian & Bittner](https://arxiv.org/abs/2501.15847).
+- Added config & code for [EDiffSR](https://github.com/XY-boy/EDiffSR/).
+- Added code for segmentation experiments: model training, visualization, evaluation.
+- Added code for tile seaming experiments: visualization, evaluation.
