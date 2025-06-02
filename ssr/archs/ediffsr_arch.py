@@ -1,3 +1,8 @@
+"""
+Adapted from: https://github.com/XY-boy/EDiffSR/blob/main/codes/config/sisr/models/modules/DenoisingNAFNet_arch.py
+Authors: Xiao, Yi and Yuan, Qiangqiang and Jiang, Kui and He, Jiang and Jin, Xianyu and Zhang, Liangpei
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

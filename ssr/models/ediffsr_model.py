@@ -1,3 +1,7 @@
+"""
+Adapted from: https://github.com/XY-boy/EDiffSR/blob/main/codes/config/sisr/models/denoising_model.py
+Authors: Xiao, Yi and Yuan, Qiangqiang and Jiang, Kui and He, Jiang and Jin, Xianyu and Zhang, Liangpei
+"""
 import logging
 from collections import OrderedDict
 
