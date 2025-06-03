@@ -113,4 +113,11 @@ See the Jupyter notebook for implementation details: [[link]](notebooks/seaming_
 - Changed the inference pipeline: support overlap, different tile & grid sizes, tile blending.
 - Implemented a new architecture with location embeddings proposed
   by [Panangian & Bittner](https://arxiv.org/abs/2501.15847).
-- Added config & code for [EDiffSR](https
+- Added config & code for [EDiffSR](https://github.com/XY-boy/EDiffSR/).
+- Added code for segmentation experiments: model training, visualization, evaluation.
+- Added code for tile seaming experiments: visualization, evaluation.
+- Added code for inference on custom region of interest: downloading Sentinel-2 imagery for the
+  selected region, splitting into tiles.
+- Implemented Bpp loss for compression guidance.
+- Implemented multi-scene aggregating and tile filtering based on cloud cover as a dataset
+  preprocessing step.
