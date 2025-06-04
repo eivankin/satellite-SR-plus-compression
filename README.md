@@ -51,12 +51,13 @@ Checkpoints from other projects:
 
 | Model                        | PSNR $\uparrow$         | SSIM $\uparrow$         | cPSNR $\uparrow$        | LPIPS $\downarrow$      | CLIPScore $\uparrow$   |
 |------------------------------|:-----------------------:|:-----------------------:|:-----------------------:|:----------------------:|:----------------------:|
-| Object-Aware                 |      17.2286            | 🥈 **0.3850**           |      18.7187            | 🥇 **0.3463**           | 🥇 **0.9498**           |
+| Object-Aware                 |      17.2286            | 0.3850           |      18.7187            | 🥇 **0.3463**           | 🥇 **0.9498**           |
 | Location Embeddings          |      15.1291            |      0.3567             |      18.3820            |      0.3644             |      0.9405             |
-| Bpp-Guided                   | 🥇 **17.6989**           | 🥇 **0.4204**           | 🥇 **19.6198**           | 🥈 **0.3555**           |      0.9397             |
+| Bpp-Guided                   | 🥇 **17.6989**           | 🥇 **0.4204**           | 🥇 **19.6198**           | 0.3555           |      0.9397             |
 | Baseline (esrgan\_1S2)       |      13.2063            |      0.1965             |      15.5893            |      0.4529             |      0.9270             |
-| EDiffSR                      |      15.1559            |      0.3241             | 🥈 **19.1176**           |      0.5445             |      0.8619             |
-| 🥇 = best, 🥈 = second-best per column. |
+| EDiffSR                      |      15.1559            |      0.3241             | 19.1176           |      0.5445             |      0.8619             |
+
+🥇 = best per column.
 
 ## Experiments with segmentation
 
@@ -73,7 +74,8 @@ Checkpoints from other projects:
 | EDiffSR                                                                                                                        | EDiffSR         | 31.13                                           | 47.48                                           | 86.24                                           | 41.21                                           | 56.00                                           |
 | NAIP                                                                                                                           | Object-Aware    | 28.25                                           | 44.06                                           | 86.40                                           | 40.54                                           | 48.24                                           |
 | NAIP                                                                                                                           | Location Embed. | 27.08                                           | 42.62                                           | 86.76                                           | 41.09                                           | 44.28                                           |
-| 🥇 = best, 🥈 = second-best per column. |
+
+🥇 = best, 🥈 = second-best per column. 
 
 ### Unet++
 
@@ -88,7 +90,8 @@ Checkpoints from other projects:
 | EDiffSR                                                                                                                        | EDiffSR         | 30.75                                           | 47.03                                           | 82.49                                           | 35.41                                           | 70.01                                           |
 | NAIP                                                                                                                           | Object-Aware    | 29.77                                           | 45.88                                           | 🥈 **88.89**                                    | 🥈 **49.99**                                    | 42.40                                           |
 | NAIP                                                                                                                           | Location Embed. | 22.16                                           | 36.27                                           | 88.69                                           | 48.48                                           | 28.98                                           |
-| 🥇 = best, 🥈 = second-best per column. |
+
+🥇 = best, 🥈 = second-best per column.
 
 |                              ![Segmentation examples](segmentation/plots/upp_masks.png)                               |
 |:---------------------------------------------------------------------------------------------------------------------:| 
