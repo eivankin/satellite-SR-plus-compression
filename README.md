@@ -25,7 +25,7 @@ Thesis manuscript: [To be published]
 
 This project uses a subsample of the latest version
 of [S2-NAIP dataset](https://huggingface.co/datasets/allenai/s2-naip).
-The prepared subsample is published on
+The prepared subsample for x4 upscale factor is published on
 Kaggle: [[link]](https://www.kaggle.com/datasets/evgeniyivankin/s2-naip-5k-pairs-rgb-nir).
 
 ## Model checkpoints
@@ -33,6 +33,7 @@ Kaggle: [[link]](https://www.kaggle.com/datasets/evgeniyivankin/s2-naip-5k-pairs
 Checkpoints trained during this project:
 
 - Single-image ESRGAN with object-aware discriminator and CLIPLoss: [To be published].
+- Single-image ESRGAN with object-aware discriminator and CLIPLoss trained to accept NIR, R, G as input & generate NIR, R, G: [To be published].
 - Single-image ESRGAN with location embeddings, object-aware discriminator and
   CLIPLoss: [To be published].
 - Single-image ESRGAN with compression guidance (Bpp loss), object-aware discriminator and
@@ -40,8 +41,7 @@ Checkpoints trained during this project:
 
 Checkpoints from other projects:
 
-- Satlas [baselines](https://github.com/allenai/satlas-super-resolution?tab=readme-ov-file#esrgan) (
-  only L1Loss + PerceptualLoss + GANLoss) for single (esrgan_1S2) and 8 LR images (esrgan_8S2).
+- Satlas [baselines](https://github.com/allenai/satlas-super-resolution?tab=readme-ov-file#esrgan) (only L1Loss + PerceptualLoss + GANLoss) for single (esrgan_1S2) and 8 LR images (esrgan_8S2).
 - EDiffSR
   checkpoint: [[link]](https://github.com/XY-boy/EDiffSR/blob/main/experiments/sisr/ediffsr/180000_G.pth).
 - SGDM checkpoint for x32 upscale without map
